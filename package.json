@@ -1,0 +1,25 @@
+{
+  "name": "couple-movies",
+  "version": "0.0.1",
+  "description": "Mange your list of movies to watch with your sweetheart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuriBrunetto/couple-movies.git"
+  },
+  "keywords": [
+    "couple",
+    "movies",
+    "sweetheart",
+    "list"
+  ],
+  "author": "Yuri Brunetto (http://www.ybrntt.com.br)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YuriBrunetto/couple-movies/issues"
+  },
+  "homepage": "https://github.com/YuriBrunetto/couple-movies#readme"
+}
