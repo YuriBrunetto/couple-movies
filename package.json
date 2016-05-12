@@ -21,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/YuriBrunetto/couple-movies/issues"
   },
-  "homepage": "https://github.com/YuriBrunetto/couple-movies#readme"
+  "homepage": "https://github.com/YuriBrunetto/couple-movies#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3"
+  }
 }

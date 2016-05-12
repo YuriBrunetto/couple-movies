@@ -1,2 +1,2 @@
-# couple-movies
-:movie_camera: manage your list of movies to watch with your sweetheart
+# Couple Movies
+:movie_camera: Manage your list of movies to watch with your sweetheart
