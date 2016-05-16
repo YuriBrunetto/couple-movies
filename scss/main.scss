@@ -1,3 +1,10 @@
 body {
-    background-color: honeydew;
+    background-color: #0F1014;
+}
+
+.landing {
+    height: 100vh;
+    background: -webkit-linear-gradient(-45deg, #3d597d 0%, #2d2e5f 100%);
+    background: -moz-linear-gradient(-45deg, #3d597d 0%, #2d2e5f 100%);
+    background: linear-gradient(135deg, #3d597d 0%, #2d2e5f 100%);
 }

@@ -1,5 +1,4 @@
 $(function() {
 
-    console.log("entrou");
 
 });

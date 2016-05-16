@@ -1,1 +1,1 @@
-$(function(){console.log("entrou")});
+$(function(){});
