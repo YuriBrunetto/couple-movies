@@ -18,6 +18,15 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "lakeside";
 }
 
+input {
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    font-size: 24px;
+}
+
 /* ----- Landing ----- */
 .landing {
     height: 100vh;
@@ -103,4 +112,9 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
     }
+}
+
+/* ----- Main ----- */
+.main {
+    padding: 32px;
 }
