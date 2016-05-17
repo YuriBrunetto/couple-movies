@@ -1,10 +1,61 @@
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing:antialiased !important;
+    -moz-webkit-font-smoothing:antialiased !important;
+}
 body {
     background-color: #0F1014;
+    font-family: "freight-text-pro";
+    color: #fff;
 }
 
+/* ----- Global styles ----- */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.lakeside {
+    font-family: "lakeside";
+}
+
+/* ----- Landing ----- */
 .landing {
     height: 100vh;
     background: -webkit-linear-gradient(-45deg, #3d597d 0%, #2d2e5f 100%);
     background: -moz-linear-gradient(-45deg, #3d597d 0%, #2d2e5f 100%);
     background: linear-gradient(135deg, #3d597d 0%, #2d2e5f 100%);
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    .landing-wrap {
+        width: 80%;
+        padding: 0 10%;
+        text-align: center;
+
+        .logo {
+            font-size: 80px;
+            font-weight: normal;
+        }
+
+        .slogan {
+            font-weight: 300;
+            text-transform: lowercase;
+            opacity: 0.6;
+            font-size: 24px;
+            margin-top: 24px;
+            padding-bottom: 40px;
+            position: relative;
+
+            &::after {
+                content: url(../img/landing-heart.svg);
+                width: 24px;
+                height: 20px;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                margin-left: -12px;
+            }
+        }
+    }
 }
