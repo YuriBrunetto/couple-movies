@@ -82,6 +82,25 @@ input {
         }
     }
 
+    .scroll-down {
+        width: 100%;
+        position: absolute;
+        bottom: 32px;
+        left: 0;
+        text-align: center;
+        margin: 0 auto;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+
+            i {
+                font-size: 14px;
+            }
+        }
+    }
+
     .landing-wrap {
         width: 80%;
         padding: 0 10%;

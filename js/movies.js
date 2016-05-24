@@ -1,11 +1,9 @@
 $(function() {
 
-    var $this
+    var $this,
         $window = $(window);
 
-    $window.load(function() {
-        Movie.LoadMovies();
-    });
+    $window.load(function() { if (window.localStorage) Movie.LoadMovies(); });
 
     var delay = (function(){
         var timer = 0;
