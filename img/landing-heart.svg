@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
-    <title>Shape</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="v2---landing" transform="translate(-616.000000, -688.000000)" fill="#F64747">
-            <g id="Group" transform="translate(428.000000, 353.000000)">
-                <path d="M200,354.8 L200.899608,353.886154 C202.413949,352.393538 204.842891,350.230769 208.111468,348.068 C213.973915,344.199385 213.074307,335 206.312251,335 C202.713818,335 200.914602,336.873385 200,338.320308 C199.085398,336.873385 197.286182,335 193.687749,335 C186.925693,335 186.026085,344.199385 191.888532,348.068 C195.157109,350.230769 197.586051,352.393538 199.100392,353.886154 L200,354.8 Z" id="Shape"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="24" height="20" viewBox="0 0 24 20" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M12 19.8l.9-.914a48.437 48.437 0 0 1 7.211-5.818C25.974 9.199 25.074 0 18.312 0 14.714 0 12.915 1.873 12 3.32 11.085 1.873 9.286 0 5.688 0c-6.762 0-7.662 9.2-1.8 13.068a48.437 48.437 0 0 1 7.212 5.818l.9.914z" fill="#F64747" fill-rule="evenodd"/></svg>

@@ -6,7 +6,7 @@ var browserSync = require("browser-sync").create();
 var sass = require("gulp-sass");
 var concat = require("gulp-concat");
 var autoprefixer = require("gulp-autoprefixer");
-var image = require("gulp-image");
+var imagemin = require("gulp-imagemin");
 
 gulp.task("serve", ["sass"], function() {
     browserSync.init({
@@ -43,9 +43,9 @@ gulp.task("js", function() {
 
 // Optimize images
 gulp.task("image", function() {
-    gulp.src("./img/*.jpg")
-        .pipe(image())
-        .pipe(gulp.dest("./dist/"));
+	gulp.src("img/*")
+		.pipe(imagemin())
+		.pipe(gulp.dest("img"))
 });
 
 // Run default task
