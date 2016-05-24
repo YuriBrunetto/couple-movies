@@ -6,6 +6,7 @@ var browserSync = require("browser-sync").create();
 var sass = require("gulp-sass");
 var concat = require("gulp-concat");
 var autoprefixer = require("gulp-autoprefixer");
+var image = require("gulp-image");
 
 gulp.task("serve", ["sass"], function() {
     browserSync.init({
@@ -30,7 +31,7 @@ gulp.task("sass", function() {
 gulp.task("js-watch", ["js"], browserSync.reload);
 
 // Uglify .js files and put them in /dist folder
-gulp.task("js", function(){
+gulp.task("js", function() {
     return gulp.src("./js/**/*.js")
         .pipe(concat("main.js"))
         .pipe(uglify().on("error", function(e){
@@ -38,6 +39,13 @@ gulp.task("js", function(){
         }))
         .pipe(gulp.dest("./dist"))
         .pipe(browserSync.stream());
+});
+
+// Optimize images
+gulp.task("image", function() {
+    gulp.src("./img/*.jpg")
+        .pipe(image())
+        .pipe(gulp.dest("./dist/"));
 });
 
 // Run default task
