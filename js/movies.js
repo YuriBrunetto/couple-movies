@@ -88,4 +88,9 @@ $(function() {
         }
     }
 
+    $(".tips-add").click(function() {
+        $(".notification").addClass("active");
+        setTimeout(function() { $(".notification").removeClass("active"); }, 3000);
+    });
+
 });

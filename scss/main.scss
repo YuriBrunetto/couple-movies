@@ -190,3 +190,26 @@ hr {
         }
     }
 }
+
+.notification {
+    width: 100%;
+    height: 64px;
+    box-sizing: border-box;
+    background-color: #27ae60;
+    border-bottom: 1px solid #15733d;
+    padding: 24px;
+    line-height: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: lowercase;
+    position: fixed;
+    left: 0;
+    top: -64px;
+    opacity: 0;
+    transition: all 300ms;
+
+    &.active {
+        top: 0;
+        opacity: 1;
+    }
+}
