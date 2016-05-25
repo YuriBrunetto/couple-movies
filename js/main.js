@@ -2,7 +2,8 @@ $(function() {
 
     // menu
     $(".menu").click(function() {
-        $(this).toggleClass("menu-close");
+        $("#menu-open").toggleClass("active");
+        $("#menu-close").toggleClass("active");
     });
 
 });

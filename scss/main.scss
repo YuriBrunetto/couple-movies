@@ -59,37 +59,21 @@ hr {
         top: 24px;
         padding: 4px;
         overflow: hidden;
+        color: #fff;
+        text-align: center;
 
-        .menu-bar {
-            width: 100%;
-            height: 4px;
-            margin-bottom: 6px;
-            background-color: #fff;
-            transition: transform 400ms;
-
-            &:first-child {
-                margin-top: 8px;
-            }
-        }
-    }
-
-    .menu-close {
-        .menu-bar {
+        i {
+            font-size: 32px;
+            line-height: 40px;
+            opacity: 0;
+            transition: transform 200ms;
+            transform: scale(0.2);
             position: absolute;
-            margin: 0;
 
-            &:nth-child(1) {
-                transform: rotate(45deg);
-                left: 0;
-                top: 14px;
-            }
-            &:nth-child(3) {
-                transform: rotate(-45deg);
-                left: 0;
-                top: 22px;
-            }
-            &:nth-child(2) {
-                opacity: 0;
+            &.active {
+                opacity: 1;
+                transform: scale(1);
+                margin-left: -14px;
             }
         }
     }
@@ -159,9 +143,11 @@ hr {
 
     .tips {
         margin-top: 40px;
+        overflow: hidden;
 
         .tips-poster {
             width: 100%;
+            border-radius: 4px !important;
         }
 
         .tips-description {
