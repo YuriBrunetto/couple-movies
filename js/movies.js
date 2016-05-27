@@ -28,24 +28,26 @@ $(function() {
                 var Search = {
                     title: data.Title,
                     year: data.Year,
+                    director: data.Director,
                     genre: data.Genre,
+                    description: data.Plot,
                     poster: data.Poster
                 };
 
-                delay(function() {
-                    if (Search.title != undefined) {
-                        str += "title: ";
-                        str += "<strong class='title'>"+Search.title+"</strong><br>";
-                        str += "year: ";
-                        str += "<strong class='year'>"+Search.year+"</strong><br>";
-                        str += "genre: ";
-                        str += "<strong class='genre'>"+Search.genre+"</strong><br>";
-                        str += "<img src='"+Search.poster+"' alt='"+Search.title+"' class='poster' width='100%'>";
-                        str += "<a href='javascript:;' id='add'>add this movie</a>"
+                if (Search.title != undefined) {
+                    str += '<div class="tips">';
+                    str += '<img src="'+ Search.poster +'" alt="'+ Search.title +'" class="tips-poster">';
+                    str += '<div class="tips-description">';
+                    str += '<h3><strong data-movie="title">'+ Search.title +'</strong> <span data-movie="year">'+ Search.year +'</span></h3><br>';
+                    str += '<p data-movie="director"><strong>Director:</strong> '+ Search.director +'</p>';
+                    str += '<p data-movie="genre"><strong>Genre:</strong> '+ Search.genre +'</p>';
+                    str += '<p data-movie="description"><strong>Short description:</strong> '+ Search.description +'</p>';
+                    str += '</div>'; // desc
+                    str += '<a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>';
+                    str += '</div>'; // tips
 
-                        $("#results").html(str);
-                    }
-                }, 1000);
+                    $("#results").html(str);
+                }
             }
         });
     });
@@ -55,19 +57,24 @@ $(function() {
     });
 
     var Movie = {};
-    Movie.SaveTo = "CoupleMovies12";
+    Movie.SaveTo = "CoupleMovies1234";
 
-    $("body").delegate("#add", "click", function() {
-        $this = $(this).parent();
+    $("body").delegate(".tips-add", "click", function() {
+        $this = $(this).parent().find(".tips-description");
 
         var newMovie = {
-            title: $this.find(".title").text(),
-            year: $this.find(".year").text(),
-            genre: $this.find(".genre").text(),
-            poster: $this.find(".poster").attr("src")
+            title: $this.find("strong[data-movie='title']").text(),
+            year: $this.find("span[data-movie='year']").text(),
+            director: $this.find("p[data-movie='director']").text(),
+            genre: $this.find("p[data-movie='genre']").text(),
+            description: $this.find("p[data-movie='description']").text().replace("Short description: ", ""),
+            poster: $(this).parent().find("img").attr("src")
         };
 
         Movie.SaveMovie(Movie.SaveTo, newMovie);
+
+        $(".notification").addClass("active");
+        setTimeout(function() { $(".notification").removeClass("active"); }, 3000);
     });
 
     Movie.SaveMovie = function(name, data) {
@@ -85,12 +92,9 @@ $(function() {
         if (local) {
             str = JSON.parse(local);
             console.log(str);
+        } else {
+            console.log("não");
         }
     }
-
-    $(".tips-add").click(function() {
-        $(".notification").addClass("active");
-        setTimeout(function() { $(".notification").removeClass("active"); }, 3000);
-    });
 
 });
