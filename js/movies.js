@@ -57,7 +57,7 @@ $(function() {
     });
 
     var Movie = {};
-    Movie.SaveTo = "CoupleMovies1234";
+    Movie.SaveTo = "CoupleMovies12345";
 
     $("body").delegate(".tips-add", "click", function() {
         $this = $(this).parent().find(".tips-description");
@@ -65,8 +65,8 @@ $(function() {
         var newMovie = {
             title: $this.find("strong[data-movie='title']").text(),
             year: $this.find("span[data-movie='year']").text(),
-            director: $this.find("p[data-movie='director']").text(),
-            genre: $this.find("p[data-movie='genre']").text(),
+            director: $this.find("p[data-movie='director']").text().replace("Director: ", ""),
+            genre: $this.find("p[data-movie='genre']").text().replace("Genre: ", ""),
             description: $this.find("p[data-movie='description']").text().replace("Short description: ", ""),
             poster: $(this).parent().find("img").attr("src")
         };

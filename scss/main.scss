@@ -38,6 +38,11 @@ hr {
     border-top: 1px solid #666;
     margin: 64px 48px;
 }
+@media all and (min-width: 640px) {
+    hr {
+        display: none;
+    }
+}
 
 /* ----- Landing ----- */
 .landing {
@@ -99,13 +104,19 @@ hr {
     }
 
     .landing-wrap {
-        width: 80%;
-        padding: 0 10%;
+        width: calc(100% - 64px);
+        padding: 0 32px;
         text-align: center;
 
         .logo {
             font-size: 80px;
             font-weight: normal;
+            @media all and (min-width: 480px) {
+                font-size: 100px;
+            }
+            @media all and (min-width: 640px) {
+                font-size: 120px;
+            }
         }
 
         .slogan {
@@ -132,22 +143,57 @@ hr {
 
 /* ----- Main ----- */
 .main {
+    max-width: 880px;
+    margin: 0 auto;
     padding: 64px 32px;
+    @media all and (min-width: 480px) {
+        padding: 64px 40px;
+    }
 
     h2 {
         font-size: 72px;
         text-transform: lowercase;
         text-align: center;
         line-height: 80%;
+
+        @media all and (min-width: 640px) {
+            font-size: 90px;
+        }
     }
 
     .tips {
-        margin-top: 40px;
+        margin-top: 64px;
         overflow: hidden;
+
+        @media all and (min-width: 640px) {
+            width: 47.142857143%;
+
+            &:nth-child(even) {
+                float: left;
+            }
+            &:nth-child(odd) {
+                float: right;
+            }
+        }
+        @media all and (min-width: 768px) {
+            width: 30.23255814%;
+            margin-left: 4.6511627907%;
+
+            &:nth-child(4n+1), &:first-of-type {
+                margin-left: 0;
+            }
+            &:nth-child(odd) {
+                float: left;
+            }
+        }
+        @media all and (min-width: 768px) {
+            width: 272px;
+            margin-left: 32px;
+        }
 
         .tips-poster {
             width: 100%;
-            border-radius: 4px !important;
+            border-radius: 4px;
         }
 
         .tips-description {
@@ -170,10 +216,17 @@ hr {
                 font-size: 18px;
                 margin-bottom: 8px;
             }
+
+            @media all and (min-width: 480px) {
+                p {
+                    font-size: 20px;
+                }
+            }
         }
 
         .tips-add {
             width: 100%;
+            max-width: 256px;
             height: 40px;
             display: block;
             color: #fff;
@@ -186,7 +239,7 @@ hr {
             text-align: center;
             padding: 4px 0;
             border-radius: 6px;
-            margin-top: 16px;
+            margin: 16px auto 0 auto;
         }
     }
 }
@@ -212,4 +265,25 @@ hr {
         top: 0;
         opacity: 1;
     }
+}
+
+.search {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    display: block;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #a74254;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.clear-both {
+    clear: both;
+    height: 0;
+    overflow: hidden;
 }

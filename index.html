@@ -5,13 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
         <title>Couple Movies &mdash; Manage and save your list of movies</title>
 
-        <link type="text/css" rel="stylesheet" href="lib/normalize/normalize.min.css">
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link type="text/css" rel="stylesheet" href="lib/animate/animate.min.css">
-        <link type="text/css" rel="stylesheet" href="css/main.css">
+        <!-- Styles -->
+        <link rel="stylesheet" href="lib/normalize/normalize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="lib/animate/animate.min.css">
+        <link rel="stylesheet" href="css/main.css">
 
-        <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="dist/main.js"></script>
+        <!-- JS -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="dist/main.js"></script>
 
         <script src="https://use.typekit.net/uhb7yqw.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -54,8 +56,6 @@
                 <a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>
             </div>
 
-            <hr>
-
             <div class="tips">
                 <img src="img/tip-the-shining.jpg" alt="The Shining" class="tips-poster">
                 <div class="tips-description">
@@ -67,8 +67,6 @@
 
                 <a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>
             </div>
-
-            <hr>
 
             <div class="tips">
                 <img src="img/tip-django-unchained.jpg" alt="Django Unchained" class="tips-poster">
@@ -84,8 +82,6 @@
                 <a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>
             </div>
 
-            <hr>
-
             <div class="tips">
                 <img src="img/tip-donnie-darko.jpg" alt="Donnie Darko" class="tips-poster">
                 <div class="tips-description">
@@ -98,16 +94,22 @@
                 <a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>
             </div>
 
-            <form id="form">
+            <!-- <form id="form">
                 <input type="text" id="t" name="t" placeholder="search a movie or a tv show" autocomplete="off">
             </form>
 
-            <div id="results"></div>
+            <div id="results"></div> -->
+
+            <div class="clear-both"></div>
         </main>
 
         <div class="notification">
             Successfully added to your list! <i class="fa fa-check" aria-hidden="true"></i>
         </div>
+
+        <a href="javascript:;" title="Search" class="search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </a>
 
     </body>
 </html>
