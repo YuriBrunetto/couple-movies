@@ -57,7 +57,7 @@ $(function() {
     });
 
     var Movie = {};
-    Movie.SaveTo = "CoupleMovies12345";
+    Movie.SaveTo = "CoupleMovies44";
 
     $("body").delegate(".tips-add", "click", function() {
         $this = $(this).parent().find(".tips-description");
@@ -72,9 +72,6 @@ $(function() {
         };
 
         Movie.SaveMovie(Movie.SaveTo, newMovie);
-
-        $(".notification").addClass("active");
-        setTimeout(function() { $(".notification").removeClass("active"); }, 3000);
     });
 
     Movie.SaveMovie = function(name, data) {
@@ -82,16 +79,50 @@ $(function() {
         var oldObj = JSON.parse(old) || [];
         var merged = oldObj.concat(data);
 
-        window.localStorage.setItem(name, JSON.stringify(merged));
+        var _length = merged.length - 1;
+        var exists = false;
+
+        // loop through all movies already on localStorage to see if there's a duplicate
+        for (var i = 0; i < oldObj.length; i++) {
+            if (merged[_length].title == oldObj[i].title) exists = true;
+        }
+
+        if (!exists) { // if there isn't a duplicate, add movie to the list
+            window.localStorage.setItem(name, JSON.stringify(merged));
+            // refresh my list
+            Movie.LoadMovies();
+
+            $(".notification").addClass("active");
+            setTimeout(function() { $(".notification").removeClass("active"); }, 3000);
+        } else {
+            console.log("already exists");
+        }
     }
 
     Movie.LoadMovies = function() {
-        var str;
+        var str, data;
 
         var local = window.localStorage.getItem(Movie.SaveTo);
         if (local) {
-            str = JSON.parse(local);
-            console.log(str);
+            data = JSON.parse(local);
+
+            for (var i in data) {
+                var movie = data[i];
+
+                str += '<div class="tips">';
+                str += '<img src="'+ movie.poster +'" alt="'+ movie.title +'" class="tips-poster">';
+                str += '<div class="tips-description">';
+                str += '<h3><strong data-movie="title">'+ movie.title +'</strong> <span data-movie="year">'+ movie.year +'</span></h3><br>';
+                str += '<p data-movie="director"><strong>Director:</strong> '+ movie.director +'</p>';
+                str += '<p data-movie="genre"><strong>Genre:</strong> '+ movie.genre +'</p>';
+                str += '<p data-movie="description"><strong>Short description:</strong> '+ movie.description +'</p>';
+                str += '</div>'; // desc
+                str += '<a href="javascript:;" class="tips-remove">remove</a>';
+                str += '</div>'; // tips
+            }
+
+            str = str.replace("undefined", "");
+            $("#my-list").html(str);
         } else {
             console.log("não");
         }

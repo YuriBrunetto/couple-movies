@@ -1,8 +1,6 @@
 $(function() {
 
-    $(window).load(function() {
-        $("body").removeClass("opacity");
-    });
+    $(window).load(function() { $("body").removeClass("opacity"); });
 
     // menu
     $(".menu").click(function() {
