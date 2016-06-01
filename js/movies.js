@@ -30,7 +30,6 @@ $(function() {
                     year: data.Year,
                     director: data.Director,
                     genre: data.Genre,
-                    description: data.Plot,
                     poster: data.Poster
                 };
 
@@ -41,7 +40,6 @@ $(function() {
                     str += '<h3><strong data-movie="title">'+ Search.title +'</strong> <span data-movie="year">'+ Search.year +'</span></h3><br>';
                     str += '<p data-movie="director"><strong>Director:</strong> '+ Search.director +'</p>';
                     str += '<p data-movie="genre"><strong>Genre:</strong> '+ Search.genre +'</p>';
-                    str += '<p data-movie="description"><strong>Short description:</strong> '+ Search.description +'</p>';
                     str += '</div>'; // desc
                     str += '<a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>';
                     str += '</div>'; // tips
@@ -57,7 +55,7 @@ $(function() {
     });
 
     var Movie = {};
-    Movie.SaveTo = "CoupleMovies44";
+    Movie.SaveTo = "CoupleMovies55";
 
     $("body").delegate(".tips-add", "click", function() {
         $this = $(this).parent().find(".tips-description");
@@ -67,7 +65,6 @@ $(function() {
             year: $this.find("span[data-movie='year']").text(),
             director: $this.find("p[data-movie='director']").text().replace("Director: ", ""),
             genre: $this.find("p[data-movie='genre']").text().replace("Genre: ", ""),
-            description: $this.find("p[data-movie='description']").text().replace("Short description: ", ""),
             poster: $(this).parent().find("img").attr("src")
         };
 
@@ -115,7 +112,6 @@ $(function() {
                 str += '<h3><strong data-movie="title">'+ movie.title +'</strong> <span data-movie="year">'+ movie.year +'</span></h3><br>';
                 str += '<p data-movie="director"><strong>Director:</strong> '+ movie.director +'</p>';
                 str += '<p data-movie="genre"><strong>Genre:</strong> '+ movie.genre +'</p>';
-                str += '<p data-movie="description"><strong>Short description:</strong> '+ movie.description +'</p>';
                 str += '</div>'; // desc
                 str += '<a href="javascript:;" class="tips-remove">remove</a>';
                 str += '</div>'; // tips
