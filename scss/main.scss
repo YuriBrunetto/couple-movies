@@ -7,6 +7,7 @@ body {
     background-color: #0F1014;
     font-family: "freight-text-pro";
     color: #fff;
+    transition: opacity 500ms ease-in;
 }
 
 /* ----- Global styles ----- */
@@ -17,16 +18,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .lakeside {
     font-family: "lakeside";
-}
-
-input {
-    outline: none;
-    border: none;
-    background: transparent;
-    color: #fff;
-    width: 100%;
-    font-size: 18px;
-    text-align: center;
 }
 
 blockquote {
@@ -42,6 +33,10 @@ hr {
     hr {
         display: none;
     }
+}
+
+.opacity {
+    opacity: 0;
 }
 
 /* ----- Landing ----- */
@@ -267,7 +262,8 @@ hr {
     }
 }
 
-.search {
+/* ----- Search ----- */
+.search-btn {
     width: 64px;
     height: 64px;
     line-height: 64px;
@@ -282,6 +278,42 @@ hr {
     text-align: center;
 }
 
+.search {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        width: calc(100% - 64px);
+
+        .search-input {
+            width: 100%;
+            height: 56px;
+            display: block;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #fff;
+            font-size: 32px;
+            padding: 4px 16px;
+            border-bottom: 2px solid transparentize(#fff, 0.7);
+            transition: border-color 500ms;
+            &:focus {
+                border-color: transparentize(#fff, 0.4);
+            }
+        }
+    }
+}
+
+/* ----- Extras ----- */
 .clear-both {
     clear: both;
     height: 0;

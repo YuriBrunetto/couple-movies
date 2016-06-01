@@ -19,7 +19,7 @@
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
 
-    <body>
+    <body class="opacity">
 
         <header class="landing">
 
@@ -100,6 +100,12 @@
 
             <div id="results"></div> -->
 
+            <div class="search">
+                <form id="form">
+                    <input type="text" id="t" name="t" placeholder="search..." class="search-input" autocomplete="off">
+                </form>
+            </div>
+
             <div class="clear-both"></div>
         </main>
 
@@ -107,7 +113,7 @@
             Successfully added to your list! <i class="fa fa-check" aria-hidden="true"></i>
         </div>
 
-        <a href="javascript:;" title="Search" class="search">
+        <a href="javascript:;" title="Search" class="search-btn">
             <i class="fa fa-search" aria-hidden="true"></i>
         </a>
 
