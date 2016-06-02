@@ -163,6 +163,24 @@ section {
         }
     }
 
+    .tips-container {
+        position: relative;
+        transition: opacity 300ms;
+
+        .close {
+            width: 32px;
+            height: 32px;
+            display: block;
+            position: absolute;
+            top: -16px;
+            right: -16px;
+            font-size: 28px;
+            text-align: center;
+            line-height: 32px;
+            color: #fff;
+        }
+    }
+
     .tips {
         margin-top: 64px;
         overflow: hidden;
