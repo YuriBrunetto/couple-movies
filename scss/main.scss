@@ -180,86 +180,122 @@ section {
             color: #fff;
         }
     }
+}
 
-    .tips {
-        margin-top: 64px;
-        overflow: hidden;
+.tips {
+    margin-top: 64px;
+    overflow: hidden;
 
-        @media all and (min-width: 640px) {
-            width: 47.142857143%;
+    @media all and (min-width: 640px) {
+        width: 47.142857143%;
+        // margin-left: 5.714285714%;
 
-            &:nth-child(even) {
-                float: left;
-            }
-            &:nth-child(odd) {
-                float: right;
-            }
+        &:nth-child(even) {
+            float: left;
         }
-        @media all and (min-width: 768px) {
-            width: 30.23255814%;
+        &:nth-child(odd) {
+            float: right;
+        }
+    }
+    @media all and (min-width: 768px) {
+        width: 30.23255814%;
+        margin-left: 4.6511627907%;
+        float: left;
+        &:nth-child(odd) {
+            float: left;
+        }
+
+        &:nth-child(3n+1) {
+            margin-left: 0 !important;
+        }
+        &:nth-child(2n+1) {
             margin-left: 4.6511627907%;
-
-            &:nth-child(4n+1), &:first-of-type {
-                margin-left: 0;
-            }
-            &:nth-child(odd) {
-                float: left;
-            }
         }
-        @media all and (min-width: 960px) {
-            width: 272px;
+    }
+    @media all and (min-width: 960px) {
+        width: 272px;
+        margin-left: 32px;
+
+        &:nth-child(3n+1) {
+            margin-left: 0 !important;
+        }
+        &:nth-child(2n+1) {
             margin-left: 32px;
         }
+    }
 
-        .tips-poster {
-            width: 100%;
-            border-radius: 4px;
-        }
+    .tips-poster {
+        width: 100%;
+        border-radius: 4px;
+    }
 
-        .tips-description {
-            margin-top: 16px;
+    .tips-description {
+        margin-top: 16px;
 
-            h3 {
-                font-size: 32px;
-                text-align: center;
-                font-weight: 600;
-
-                span {
-                    font-size: 16px;
-                    font-weight: 300;
-                    font-style: italic;
-                }
-            }
-
-            p {
-                line-height: 150%;
-                font-size: 18px;
-                margin-bottom: 8px;
-            }
-
-            @media all and (min-width: 480px) {
-                p {
-                    font-size: 20px;
-                }
-            }
-        }
-
-        .tips-add {
-            width: 100%;
-            max-width: 256px;
-            height: 40px;
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            background-color: #3d597d;
-            border-bottom: 3px solid #2e4666;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 40px;
+        h3 {
+            font-size: 32px;
             text-align: center;
-            padding: 4px 0;
-            border-radius: 6px;
-            margin: 16px auto 0 auto;
+            font-weight: 600;
+
+            span {
+                font-size: 16px;
+                font-weight: 300;
+                font-style: italic;
+            }
+        }
+
+        p {
+            line-height: 150%;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        @media all and (min-width: 480px) {
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .tips-add {
+        width: 100%;
+        height: 40px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        background-color: #3d597d;
+        border-bottom: 3px solid #2e4666;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 40px;
+        text-align: center;
+        padding: 4px 0;
+        border-radius: 6px;
+        margin: 16px auto 0 auto;
+        transition: opacity 300ms;
+    }
+
+    .tips-remove {
+        width: 100%;
+        height: 40px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        background-color: #c0392b;
+        border-bottom: 3px solid #9d271b;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 40px;
+        text-align: center;
+        padding: 4px 0;
+        border-radius: 6px;
+        margin: 16px auto 0 auto;
+        transition: opacity 300ms;
+    }
+
+    .tips-add, .tips-remove {
+        &:hover {
+            opacity: 0.8;
         }
     }
 }

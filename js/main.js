@@ -8,8 +8,10 @@ $(function() {
         $("#menu-close").toggleClass("active");
     });
 
+
     // close tips
-    var isClosed = window.localStorage.getItem("CoupleMoviesTips");
+    var tips = "CoupleMoviesTips12";
+    var isClosed = window.localStorage.getItem(tips);
 
     if (isClosed) {
         $(".tips-container").remove();
@@ -21,7 +23,7 @@ $(function() {
             });
 
             var closed = true;
-            window.localStorage.setItem("CoupleMoviesTips", closed);
+            window.localStorage.setItem(tips, closed);
         });
     }
 

@@ -71,6 +71,11 @@ $(function() {
         Movie.SaveMovie(Movie.SaveTo, newMovie);
     });
 
+    $("body").delegate(".tips-remove", "click", function() {
+        $this = $(this).parent();
+        Movie.DeleteMovie($this);
+    });
+
     Movie.SaveMovie = function(name, data) {
         var old = localStorage.getItem(name) || "[]";
         var oldObj = JSON.parse(old) || [];
@@ -121,6 +126,20 @@ $(function() {
             $("#my-list").html(str);
         } else {
             console.log("não");
+        }
+    }
+
+    Movie.DeleteMovie = function(movie) {
+        var mv_name = movie.find("strong[data-movie='title']").text();
+        var movies = JSON.parse(localStorage.getItem(Movie.SaveTo));
+        var del = false;
+        for (var i = 0; i < movies.length; i++) {
+            if (mv_name == movies[i].title) {
+                del = true;
+            }
+        }
+        if (del) {
+
         }
     }
 
