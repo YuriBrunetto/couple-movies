@@ -10,7 +10,7 @@ $(function() {
 
 
     // close tips
-    var tips = "CoupleMoviesTips12";
+    var tips = "CoupleMoviesTips123";
     var isClosed = window.localStorage.getItem(tips);
 
     if (isClosed) {

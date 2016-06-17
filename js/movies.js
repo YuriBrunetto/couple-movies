@@ -55,7 +55,13 @@ $(function() {
     });
 
     var Movie = {};
+    /**
+    ** Movie.SaveTo
+    */
     Movie.SaveTo = "CoupleMovies55";
+    /**
+    ** Movie.SaveTo
+    */
 
     $("body").delegate(".tips-add", "click", function() {
         $this = $(this).parent().find(".tips-description");
@@ -94,10 +100,11 @@ $(function() {
             // refresh my list
             Movie.LoadMovies();
 
-            $(".notification").addClass("active");
-            setTimeout(function() { $(".notification").removeClass("active"); }, 3000);
+            $("#notification-added").addClass("active");
+            setTimeout(function() { $("#notification-added").removeClass("active"); }, 3000);
         } else {
-            console.log("already exists");
+            $("#notification-exists").addClass("active");
+            setTimeout(function() { $("#notification-exists").removeClass("active"); }, 3000);
         }
     }
 

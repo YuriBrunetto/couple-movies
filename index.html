@@ -100,22 +100,30 @@
 
             <div class="clear-both"></div>
 
+            <!-- ***** SEARCH FORM ***** -->
+            <form id="form">
+                <input type="text" id="t" name="t" placeholder="search a movie or a tv show" class="search" autocomplete="off">
+            </form>
+
+            <div id="results"></div>
+            <!-- ***** SEARCH FORM ***** -->
+
+            <div class="clear-both"></div>
+
             <section>
                 <h2 class="lakeside">My list</h2>
 
                 <div id="my-list"></div>
             </section>
-            <!-- <form id="form">
-                <input type="text" id="t" name="t" placeholder="search a movie or a tv show" autocomplete="off">
-            </form>
-
-            <div id="results"></div> -->
 
             <div class="clear-both"></div>
         </main>
 
-        <div class="notification">
+        <div class="notification" id="notification-added">
             Successfully added to your list! <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="notification notification-warning" id="notification-exists">
+            This movie already exists on your list.
         </div>
 
     </body>
