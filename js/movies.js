@@ -17,7 +17,7 @@ $(function() {
         e.preventDefault();
 
         var query = $(this).serialize();
-        var search = "http://www.omdbapi.com/?" + query;
+        var search = "https://www.omdbapi.com/?" + query;
         var str = "";
 
         $.ajax({
