@@ -8,9 +8,8 @@ $(function() {
         $("#menu-close").toggleClass("active");
     });
 
-
     // close tips
-    var tips = "CoupleMoviesTips123";
+    var tips = "CoupleMoviesTips125";
     var isClosed = window.localStorage.getItem(tips);
 
     if (isClosed) {
@@ -26,5 +25,10 @@ $(function() {
             window.localStorage.setItem(tips, closed);
         });
     }
+
+    // scroll down
+    $("#scroll").click(function() {
+        $("html, body").animate({ scrollTop: $(".main").offset().top }, 400);
+    });
 
 });

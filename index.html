@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Metas -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+
         <title>Couple Movies &mdash; Manage and save your list of movies</title>
+
+        <!-- Favicons -->
+        <link type="image/x-icon"	rel="shortcut icon"		href="img/favicon.png">
+        <link type="image/png"		rel="icon"				href="img/favicon.png">
+        <link type="image/png"		rel="apple-touch-icon"	href="img/favicon.png">
 
         <!-- Styles -->
         <link rel="stylesheet" href="lib/normalize/normalize.min.css">
@@ -23,10 +30,10 @@
 
         <header class="landing">
 
-            <a href="javascript:;" title="Menu" class="menu">
+            <!-- <a href="javascript:;" title="Menu" class="menu">
                 <i id="menu-open" class="fa fa-bars active" aria-hidden="true"></i>
                 <i id="menu-close" class="fa fa-times" aria-hidden="true"></i>
-            </a>
+            </a> -->
 
             <div class="landing-wrap">
                 <h1 class="logo lakeside">Couple Movies</h1>
@@ -34,7 +41,7 @@
             </div>
 
             <div class="scroll-down">
-                <a href="javascript:;" title="Scroll down" class="animated infinite pulse">
+                <a href="javascript:;" title="Scroll down" id="scroll" class="animated infinite pulse">
                     scroll down!<br><i class="fa fa-arrow-down" aria-hidden="true"></i>
                 </a>
             </div>
@@ -102,7 +109,7 @@
 
             <!-- ***** SEARCH FORM ***** -->
             <form id="form">
-                <input type="text" id="t" name="t" placeholder="search a movie or a tv show" class="search" autocomplete="off">
+                <input type="text" id="t" name="t" placeholder="search a movie" class="search" autocomplete="off">
             </form>
 
             <div id="results"></div>
@@ -124,6 +131,9 @@
         </div>
         <div class="notification notification-warning" id="notification-exists">
             This movie already exists on your list.
+        </div>
+        <div class="notification notification-del" id="notification-del">
+            Movie deleted from your list.
         </div>
 
     </body>

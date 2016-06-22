@@ -58,7 +58,7 @@ $(function() {
     /**
     ** Movie.SaveTo
     */
-    Movie.SaveTo = "CoupleMovies55";
+    Movie.SaveTo = "CoupleMovies77";
     /**
     ** Movie.SaveTo
     */
@@ -115,39 +115,45 @@ $(function() {
         if (local) {
             data = JSON.parse(local);
 
-            for (var i in data) {
-                var movie = data[i];
+            if (data.length >= 1) {
+                for (var i in data) {
+                    var movie = data[i];
 
-                str += '<div class="tips">';
-                str += '<img src="'+ movie.poster +'" alt="'+ movie.title +'" class="tips-poster">';
-                str += '<div class="tips-description">';
-                str += '<h3><strong data-movie="title">'+ movie.title +'</strong> <span data-movie="year">'+ movie.year +'</span></h3><br>';
-                str += '<p data-movie="director"><strong>Director:</strong> '+ movie.director +'</p>';
-                str += '<p data-movie="genre"><strong>Genre:</strong> '+ movie.genre +'</p>';
-                str += '</div>'; // desc
-                str += '<a href="javascript:;" class="tips-remove">remove</a>';
-                str += '</div>'; // tips
+                    str += '<div class="tips">';
+                    str += '<img src="'+ movie.poster +'" alt="'+ movie.title +'" class="tips-poster">';
+                    str += '<div class="tips-description">';
+                    str += '<h3><strong data-movie="title">'+ movie.title +'</strong> <span data-movie="year">'+ movie.year +'</span></h3><br>';
+                    str += '<p data-movie="director"><strong>Director:</strong> '+ movie.director +'</p>';
+                    str += '<p data-movie="genre"><strong>Genre:</strong> '+ movie.genre +'</p>';
+                    str += '</div>'; // desc
+                    str += '<a href="javascript:;" class="tips-remove">remove</a>';
+                    str += '</div>'; // tips
+                }
+
+                str = str.replace("undefined", "");
+                $("#my-list").html(str);
+            } else {
+                $("#my-list").html("<p class='no-movies'>There are no movies on your list.</p>")
             }
-
-            str = str.replace("undefined", "");
-            $("#my-list").html(str);
         } else {
-            console.log("não");
+            // new user
         }
     }
 
     Movie.DeleteMovie = function(movie) {
         var mv_name = movie.find("strong[data-movie='title']").text();
         var movies = JSON.parse(localStorage.getItem(Movie.SaveTo));
-        var del = false;
-        for (var i = 0; i < movies.length; i++) {
-            if (mv_name == movies[i].title) {
-                del = true;
-            }
-        }
-        if (del) {
+        var deleted = $.grep(movies, function(i) {
+            return i.title !== mv_name;
+        });
 
-        }
+        window.localStorage.setItem(Movie.SaveTo, JSON.stringify(deleted));
+        setTimeout(function() {
+            Movie.LoadMovies();
+
+            $("#notification-del").addClass("active");
+            setTimeout(function() { $("#notification-del").removeClass("active"); }, 3000);
+        }, 1000); // refresh
     }
 
 });
