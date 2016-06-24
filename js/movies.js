@@ -50,18 +50,16 @@ $(function() {
         });
     });
 
-    $("#form").on("keyup", "#t", function() {
-        $(this).submit();
-    });
+    $("#form").on("keyup", "#t", function() { $(this).submit(); });
 
     var Movie = {};
     /**
-    ** Movie.SaveTo
-    */
+     ** Movie.SaveTo
+     */
     Movie.SaveTo = "CoupleMovies77";
     /**
-    ** Movie.SaveTo
-    */
+     ** Movie.SaveTo
+     */
 
     $("body").delegate(".tips-add", "click", function() {
         $this = $(this).parent().find(".tips-description");
@@ -133,10 +131,10 @@ $(function() {
                 str = str.replace("undefined", "");
                 $("#my-list").html(str);
             } else {
-                $("#my-list").html("<p class='no-movies'>There are no movies on your list.</p>")
+                $("#my-list").html("<p class='no-movies'>There are no movies on your list.</p>");
             }
         } else {
-            // new user
+            $("#my-list").html("<p class='no-movies'>There are no movies on your list.</p>");
         }
     }
 
