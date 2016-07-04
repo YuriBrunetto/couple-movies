@@ -334,6 +334,9 @@ section {
 }
 
 /* ----- Search ----- */
+form {
+    overflow: hidden;
+}
 .search {
     width: 100%;
     height: 40px;
@@ -347,6 +350,7 @@ section {
     border-bottom: 2px solid transparentize(#fff, 0.9);
     margin-top: 64px;
     transition: border-color 400ms;
+    border-radius: 0;
 
     &:focus {
         border-color: transparentize(#fff, 0.6);
