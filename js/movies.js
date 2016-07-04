@@ -56,7 +56,7 @@ $(function() {
     /**
      ** Movie.SaveTo
      */
-    Movie.SaveTo = "CoupleMovies77";
+    Movie.SaveTo = "CoupleMovies";
     /**
      ** Movie.SaveTo
      */

@@ -9,7 +9,7 @@ $(function() {
     });
 
     // close tips
-    var tips = "CoupleMoviesTips125";
+    var tips = "CoupleMoviesTips";
     var isClosed = window.localStorage.getItem(tips);
 
     if (isClosed) {
