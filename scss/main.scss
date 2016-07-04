@@ -362,6 +362,48 @@ section {
 
 }
 
+/* ----- Footer ----- */
+.footer {
+    padding: 0 2rem;
+    margin-top: 32px;
+    padding-bottom: 32px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    line-height: 200%;
+
+    span {
+        display: none;
+    }
+    @media all and (min-width:480px) {
+        span {
+            display: inline;
+        }
+
+        br {
+            display: none;
+        }
+    }
+
+    i {
+        color: #c94360;
+    }
+
+    a {
+        color: #666;
+        text-decoration: none;
+        border-bottom: 1px solid #999;
+        padding-bottom: 2px;
+        transition: 300ms;
+
+        &:hover {
+            border-color: #ccc;
+            color: #fff;
+        }
+    }
+}
+
 /* ----- Extras ----- */
 .clear-both {
     clear: both;
