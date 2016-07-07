@@ -5,19 +5,11 @@ $(function() {
 
     $window.load(function() { if (window.localStorage) Movie.LoadMovies(); });
 
-    var delay = (function(){
-        var timer = 0;
-        return function(cb, ms) {
-            clearTimeout(timer);
-            timer = setTimeout(cb, ms);
-        };
-    })();
-
     $("#form").on("submit", function(e) {
         e.preventDefault();
 
         var query = $(this).serialize();
-        var search = "https://www.omdbapi.com/?" + query;
+        var search = "https://www.omdbapi.com/?" + query + "&type=movie";
         var str = "";
 
         $.ajax({
@@ -25,32 +17,53 @@ $(function() {
             dataType: "json",
             url: search,
             success: function(data) {
-                var Search = {
-                    title: data.Title,
-                    year: data.Year,
-                    director: data.Director,
-                    genre: data.Genre,
-                    poster: data.Poster
-                };
+                var s = {};
 
-                if (Search.title != undefined) {
-                    str += '<div class="tips">';
-                    str += '<img src="'+ Search.poster +'" alt="'+ Search.title +'" class="tips-poster">';
-                    str += '<div class="tips-description">';
-                    str += '<h3><strong data-movie="title">'+ Search.title +'</strong> <span data-movie="year">'+ Search.year +'</span></h3><br>';
-                    str += '<p data-movie="director"><strong>Director:</strong> '+ Search.director +'</p>';
-                    str += '<p data-movie="genre"><strong>Genre:</strong> '+ Search.genre +'</p>';
-                    str += '</div>'; // desc
-                    str += '<a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>';
-                    str += '</div>'; // tips
+                if (data.Search != undefined) {
+                    var s_len = data.Search.length;
 
-                    $("#results").html(str);
+                    if (s_len) {
+                        for (var i = 0; i < s_len; i++) {
+                            s[i] = {
+                                title: data.Search[i].Title,
+                                year: data.Search[i].Year,
+                                poster: data.Search[i].Poster
+                            }
+
+                            str += '<div class="tips">';
+                            if (s[i].poster != "N/A") {
+                                str += '<img src="'+ s[i].poster +'" alt="'+ s[i].title +'" class="tips-poster">';
+                            }
+                            str += '<div class="tips-description">';
+                            str += '<h3><strong data-movie="title">'+ s[i].title +'</strong> <span data-movie="year">'+ s[i].year +'</span></h3><br>';
+                            str += '</div>'; // desc
+                            str += '<a href="javascript:;" class="tips-add">add to list <i class="fa fa-check" aria-hidden="true"></i></a>';
+                            str += '</div>'; // tips
+                        }
+
+                        $("#results").html(str);
+                    }
+                } else {
+                    $("#results").html("<p class='no-movies'>No matches found.</p>");
                 }
             }
         });
     });
 
-    $("#form").on("keyup", "#t", function() { $(this).submit(); });
+    var delay = (function() {
+        var timer = 0;
+        return function(callback, ms){
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+        };
+    })();
+
+    $("#t").on("keydown", function() {
+        $this = $(this);
+        delay(function() {
+            $this.submit();
+        }, 1000);
+    });
 
     var Movie = {};
     /**
@@ -67,8 +80,6 @@ $(function() {
         var newMovie = {
             title: $this.find("strong[data-movie='title']").text(),
             year: $this.find("span[data-movie='year']").text(),
-            director: $this.find("p[data-movie='director']").text().replace("Director: ", ""),
-            genre: $this.find("p[data-movie='genre']").text().replace("Genre: ", ""),
             poster: $(this).parent().find("img").attr("src")
         };
 
@@ -77,7 +88,11 @@ $(function() {
 
     $("body").delegate(".tips-remove", "click", function() {
         $this = $(this).parent();
-        Movie.DeleteMovie($this);
+        $this.css("opacity", "0").one("webkitTransitionEnd transitionend", function() {
+            $this.hide(300, function() {
+                Movie.DeleteMovie($this);
+            });
+        });
     });
 
     Movie.SaveMovie = function(name, data) {
@@ -118,11 +133,11 @@ $(function() {
                     var movie = data[i];
 
                     str += '<div class="tips">';
-                    str += '<img src="'+ movie.poster +'" alt="'+ movie.title +'" class="tips-poster">';
+                    if (movie.poster != undefined) {
+                        str += '<img src="'+ movie.poster +'" alt="'+ movie.title +'" class="tips-poster">';
+                    }
                     str += '<div class="tips-description">';
                     str += '<h3><strong data-movie="title">'+ movie.title +'</strong> <span data-movie="year">'+ movie.year +'</span></h3><br>';
-                    str += '<p data-movie="director"><strong>Director:</strong> '+ movie.director +'</p>';
-                    str += '<p data-movie="genre"><strong>Genre:</strong> '+ movie.genre +'</p>';
                     str += '</div>'; // desc
                     str += '<a href="javascript:;" class="tips-remove">remove</a>';
                     str += '</div>'; // tips
