@@ -1,0 +1,63 @@
+.home {
+  height: 100vh;
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home h1 {
+  color: #24292E;
+  font-size: 40px;
+}
+.home h2 {
+  color: rgba(0,0,0,.54);
+  font-weight: normal;
+  font-family: "Roboto Mono", monospace;
+  margin-top: 16px;
+  font-size: 16px;
+}
+.home h2 span {
+  font-weight: bold;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #FCD635;
+  line-height: 200%;
+}
+
+.sign-up {
+  margin-top: 32px;
+  font-size: 14px;
+  display: inline-block;
+  padding: 16px 48px;
+  border: 1px solid rgba(0,0,0,.12);
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 26px;
+  font-weight: 700;
+  color: rgba(0,0,0,.54);
+}
+
+@media (min-width: 720px) {
+  .home h1 {
+    font-size: 72px;
+  }
+  .home h2 {
+    font-size: 20px;
+    margin-top: 24px;
+  }
+  .home h2 span {
+    padding-bottom: 4px;
+  }
+
+  .sign-up {
+    font-size: 16px;
+    margin-top: 40px;
+    transition: all .3s ease;
+  }
+  .sign-up:hover {
+    background-color: #3b5998;
+    color: #fff;
+    border-color: transparent;
+  }
+}
