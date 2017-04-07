@@ -1,0 +1,28 @@
+.header {
+  background-color: #24292E;
+  color: #fff;
+}
+.header-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo {
+  padding: 20px 0;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  display: inline-block;
+}
+.header-menu {
+  height: 64px;
+  font-size: 24px;
+  color: #fff;
+  padding: 8px;
+  align-self: center;
+}

@@ -24,6 +24,9 @@
   border-bottom: 3px solid #FCD635;
   line-height: 200%;
 }
+.home h2 i {
+  color: #FCD635;
+}
 
 .sign-up {
   margin-top: 32px;
