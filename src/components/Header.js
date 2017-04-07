@@ -24,7 +24,7 @@ class Header extends Component {
       isOpen: this.state.isMenuOpen,
       close: this.close.bind(this),
       toggle:
-        <button type="button" className="header-menu" onClick={this.toggle.bind(this)}>
+        <button type="button" className="header-btn" onClick={this.toggle.bind(this)}>
           <i className="fa fa-bars" aria-hidden="true"></i>
         </button>,
       align: 'left'
@@ -37,9 +37,14 @@ class Header extends Component {
             <Link to="/" title="Couple Movies" className="header-logo">Couple Movies</Link>
           </BrowserRouter>
 
-          <DropdownMenu {...menuOptions}>
-            <li>tste</li>
-          </DropdownMenu>
+          <div className="header-right">
+            <button type="button" className="header-btn">
+              <i className="fa fa-search" aria-hidden="true"></i>
+            </button>
+            <DropdownMenu {...menuOptions}>
+              
+            </DropdownMenu>
+          </div>
         </div>
       </header>
     )

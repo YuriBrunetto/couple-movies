@@ -19,10 +19,17 @@
   font-size: 20px;
   display: inline-block;
 }
-.header-menu {
+
+.header-right {
+  display: flex;
+}
+.header-btn {
   height: 64px;
   font-size: 24px;
   color: #fff;
   padding: 8px;
   align-self: center;
+}
+.header-btn:first-child {
+  margin-right: 8px;
 }
