@@ -15,6 +15,15 @@ class Header extends Component {
             <button type="button" className="header-btn">
               <i className="fa fa-search" aria-hidden="true"></i>
             </button>
+            <div className="header-user">
+              <div className="header-user-info">
+                <p className="name">Yuri Brunetto</p>
+                <button type="button" className="logout">Logout</button>
+              </div>
+              <div className="header-user-photo">
+                <img src="https://avatars2.githubusercontent.com/u/5321477?v=3&s=460" alt="Yuri Brunetto" />
+              </div>
+            </div>
           </div>
         </div>
       </header>

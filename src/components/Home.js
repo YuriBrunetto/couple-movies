@@ -9,6 +9,7 @@ const Home = () => {
         now, you'll <span>never forget</span> to watch it <i className="fa fa-heart" aria-hidden="true"></i>
       </h2>
       <button type="button" className="sign-up">Sign Up with Facebook</button>
+      <p>Already have an account? <span>Log in</span>.</p>
     </main>
   )
 }

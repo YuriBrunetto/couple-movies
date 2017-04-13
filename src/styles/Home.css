@@ -1,5 +1,5 @@
 .home {
-  height: 100vh;
+  height: calc(100vh - 64px);
   padding: 24px;
   text-align: center;
   display: flex;
@@ -26,6 +26,21 @@
 }
 .home h2 i {
   color: #FCD635;
+}
+.home p {
+  font-size: 12px;
+  margin-top: 16px;
+  color: rgba(0,0,0,.38);
+}
+.home p span {
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .1s;
+}
+.home p span:hover {
+  border-color: #FCD635;
 }
 
 .sign-up {

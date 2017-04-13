@@ -31,3 +31,43 @@
   padding: 8px;
   align-self: center;
 }
+
+.header-user {
+  height: 40px;
+  align-self: center;
+  margin-left: 8px;
+  display: flex;
+}
+.header-user-info {
+  margin-right: 8px;
+  font-size: 14px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.header-user-info .name {
+  font-weight: bold;
+}
+.header-user-info .logout {
+  color: rgba(255,255,255,.5);
+  transition: color .3s;
+}
+.header-user-info .logout:hover {
+  color: #fff;
+}
+@media all and (min-width: 720px) {
+  .header-user-info {
+    display: flex;
+  }
+}
+
+.header-user-photo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.header-user-photo img {
+  width: 100%;
+}
