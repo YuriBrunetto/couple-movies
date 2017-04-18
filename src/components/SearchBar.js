@@ -4,6 +4,7 @@ import '../styles/SearchBar.css'
 class SearchBar extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       search: ''
     }
@@ -11,8 +12,9 @@ class SearchBar extends Component {
     this.handleSearch = this.handleSearch.bind(this)
   }
 
+
   handleSearch(e) {
-    console.log('search', e.target.value)
+    this.setState({ search: e.target.value })
   }
 
   render() {
@@ -20,9 +22,10 @@ class SearchBar extends Component {
       <form className="search">
         <input
           value={this.state.search}
+          autoFocus
           type="text"
           className="search-bar"
-          placeholder="Search..."
+          placeholder="Search for a movie..."
           onChange={this.handleSearch} />
       </form>
     )

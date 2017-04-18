@@ -21,7 +21,6 @@
 }
 
 .header-right {
-  width: 100%;
   display: flex;
   position: relative;
 }
@@ -31,6 +30,11 @@
   color: #fff;
   padding: 8px;
   align-self: center;
+}
+@media all and (min-width: 720px) {
+  .header-btn {
+    display: none;
+  }
 }
 
 .header-user {

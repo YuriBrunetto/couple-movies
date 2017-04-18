@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Link } from 'react-router-dom'
 import '../styles/Header.css'
+import classnames from 'classnames'
 
 import SearchBar from './SearchBar'
 
@@ -20,19 +21,26 @@ class Header extends Component {
   }
 
   render() {
+    const { isSearchOpen } = this.state
+    let btnSearchClass = classnames({
+      'fa': true,
+      'fa-search': !isSearchOpen,
+      'fa-times': isSearchOpen
+    })
+
     return (
       <header className="header">
         <div className="header-wrap">
+          {
+            !isSearchOpen ?
+              <BrowserRouter>
+                <Link to="/" title="Couple Movies" className="header-logo">Couple Movies</Link>
+              </BrowserRouter> :
+              <SearchBar />
+          }
           <div className="header-right">
-            {
-              this.state.isSearchOpen ?
-                <SearchBar /> :
-                <BrowserRouter>
-                  <Link to="/" title="Couple Movies" className="header-logo">Couple Movies</Link>
-                </BrowserRouter>
-            }
             <button type="button" className="header-btn" onClick={this.toggleSearch}>
-              <i className="fa fa-search" aria-hidden="true"></i>
+              <i className={btnSearchClass} aria-hidden="true"></i>
             </button>
             <div className="header-user">
               <div className="header-user-info">
