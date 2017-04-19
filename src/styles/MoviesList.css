@@ -1,0 +1,13 @@
+.movies {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+@media all and (min-width: 880px) {
+  .movies {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 68px 12px;
+  }
+}

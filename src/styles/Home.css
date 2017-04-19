@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
 }
 .home h1 {
   color: #24292E;
