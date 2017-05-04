@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import Home from './components/Home'
 import Header from './components/Header'
 import MoviesList from './components/MoviesList'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
@@ -12,6 +13,8 @@ class App extends Component {
         <Home />
         <Header />
         <MoviesList />
+
+        <Footer />
       </div>
     )
   }

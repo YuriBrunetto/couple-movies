@@ -1,0 +1,23 @@
+.footer {
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,.54);
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+}
+.footer i {
+  color: #FF0045;
+  margin: 0 8px;
+}
+.footer a {
+  margin: 0 8px;
+  font-weight: bold;
+  color: rgba(0,0,0,.54);
+  text-decoration: none;
+  padding-top: 6px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #FCD635;
+}
