@@ -2,6 +2,7 @@
   "name": "couple-movies-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://yuribrunetto.github.io/couple-movies/react",
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
